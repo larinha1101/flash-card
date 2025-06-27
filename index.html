@@ -1,48 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flashcard</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flashcards de Estudo</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+    <header>
+        <h1>Flashcards de Estudo</h1>
+    </header>
+
     <main>
+        <section id="container">
+            <!-- Flashcard 1 - Quem sou eu -->
+            <article class="cartao">
+                <div class="cartao__conteudo">
+                    <h3>Quem sou eu?</h3>
+                    <div class="cartao__conteudo__pergunta">
+                        Quem sou eu?
+                    </div>
+                    <div class="cartao__conteudo__resposta">
+                        Meu nome é Lara. Todas as coisas que aconteceram comigo formam quem sou eu.
+                    </div>
+                </div>
+            </article>
+
+            <!-- Flashcard 2 - Como estarei em 10 anos -->
+            <article class="cartao">
+                <div class="cartao__conteudo">
+                    <h3>Como estarei em 10 anos?</h3>
+                    <div class="cartao__conteudo__pergunta">
+                        Como estarei em 10 anos?
+                    </div>
+                    <div class="cartao__conteudo__resposta">
+                        Estarei estável financeiramente, casada com meu namorado divo, e juntos poderemos realizar nossos sonhos.
+                    </div>
+                </div>
+            </article>
+
+            <!-- Flashcard 3 - Meu Presente -->
+            <article class="cartao">
+                <div class="cartao__conteudo">
+                    <h3>Meu Presente</h3>
+                    <div class="cartao__conteudo__pergunta">
+                        Como está sendo meu presente?
+                    </div>
+                    <div class="cartao__conteudo__resposta">
+                        Estou namorando há alguns meses e me sinto extremamente feliz. Trabalho na Makita e estou cursando Auxiliar Administrativo.
+                    </div>
+                </div>
+            </article>
+
+            <!-- Flashcard 4 - Eu e minha Escola -->
+            <article class="cartao">
+                <div class="cartao__conteudo">
+                    <h3>Eu e minha Escola</h3>
+                    <div class="cartao__conteudo__pergunta">
+                        Como está sendo minha experiência escolar?
+                    </div>
+                    <div class="cartao__conteudo__resposta">
+                        Estou no segundo ano do ensino médio na turma de exatas. Minhas notas estão ok e me esforço ao máximo para melhorar.
+                    </div>
+                </div>
+            </article>
+        </section>
     </main>
+
     <footer>
         <p>Projeto desenvolvido pela Alura, sem fins lucrativos</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
-<main>
-        <section id="container">
-                <article class="cartao">
-                </article>
-        </section>
-</main>
-<main>
-        <section id="container">
-                <article class="cartao">
-                        <div class="cartao__conteudo">
-                                <h3>Programação</h3>
-                                <div class="cartao__conteudo__pergunta">
-                                        O que é JavaScript?
-                                </div>
-                                <div class="cartao__conteudo__resposta">
-                                        O JavaScript é uma linguagem de programação
-                                </div>
-                        </div>
-                </article>
-        </section>
-</main>
-<article class="cartao">
-        <div class="cartao__conteudo">
-                <h3>Programação</h3>
-                <div class="cartao__conteudo__pergunta">
-                        O que é CSS?
-                </div>
-                <div class="cartao__conteudo__resposta">
-                        O CSS é uma linguagem de estilização
-                </div>
-        </div>
-</article>
+
+</html>
