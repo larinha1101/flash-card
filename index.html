@@ -1,340 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flashcards de Estudo</title>
-    <link rel="stylesheet" href="styles.css" />
-</head>
-
-<body>
-    <header>
-        <h1>Flashcards de Estudo</h1>
-    </header>
-
-    <main>
-        <section id="container">
-            <!-- Flashcard 1 - Quem sou eu -->
-            <article class="cartao">
-                <div class="cartao__conteudo">
-                    <h3>Quem sou eu?</h3>
-                    <div class="cartao__conteudo__pergunta">
-                        Quem sou eu?
-                    </div>
-                    <div class="cartao__conteudo__resposta">
-                        Meu nome é Lara. Todas as coisas que aconteceram comigo formam quem sou eu.
-                    </div>
-                </div>
-            </article>
-
-            <!-- Flashcard 2 - Como estarei em 10 anos -->
-            <article class="cartao">
-                <div class="cartao__conteudo">
-                    <h3>Como estarei em 10 anos?</h3>
-                    <div class="cartao__conteudo__pergunta">
-                        Como estarei em 10 anos?
-                    </div>
-                    <div class="cartao__conteudo__resposta">
-                        Estarei estável financeiramente, casada com meu namorado divo, e juntos poderemos realizar nossos sonhos.
-                    </div>
-                </div>
-            </article>
-
-            <!-- Flashcard 3 - Meu Presente -->
-            <article class="cartao">
-                <div class="cartao__conteudo">
-                    <h3>Meu Presente</h3>
-                    <div class="cartao__conteudo__pergunta">
-                        Como está sendo meu presente?
-                    </div>
-                    <div class="cartao__conteudo__resposta">
-                        Estou namorando há alguns meses e me sinto extremamente feliz. Trabalho na Makita e estou cursando Auxiliar Administrativo.
-                    </div>
-                </div>
-            </article>
-
-            <!-- Flashcard 4 - Eu e minha Escola -->
-            <article class="cartao">
-                <div class="cartao__conteudo">
-                    <h3>Eu e minha Escola</h3>
-                    <div class="cartao__conteudo__pergunta">
-                        Como está sendo minha experiência escolar?
-                    </div>
-                    <div class="cartao__conteudo__resposta">
-                        Estou no segundo ano do ensino médio na turma de exatas. Minhas notas estão ok e me esforço ao máximo para melhorar.
-                    </div>
-                </div>
-            </article>
-        </section>
-    </main>
-
-    <footer>
-        <p>Projeto desenvolvido pela Alura, sem fins lucrativos</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-
-</html>
-<!DOCTYPE html>
-<html lang="pt-br">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Flashcards de Estudo</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <header>
-    <h1>Flashcards de Estudo</h1>
-  </header>
+  <h1>Flashcards de Estudo</h1>
 
-  <main>
-    <section id="container">
-      <!-- Flashcard 1 -->
-      <article class="cartao">
-        <div class="cartao__inner">
-          <div class="cartao__frente">
-            <h3>Quem sou eu?</h3>
-            <p>Quem sou eu?</p>
-          </div>
-          <div class="cartao__verso">
-            <p>Meu nome é Lara. Todas as coisas que aconteceram comigo formam quem sou eu.</p>
-          </div>
-        </div>
-      </article>
+  <div class="card-container">
+    <div class="card">
+      <div class="front">
+        <h2>Quem sou eu?</h2>
+      </div>
+      <div class="back">
+        <p>Meu nome é Lara. Todas as coisas que aconteceram comigo formam quem sou eu.</p>
+      </div>
+    </div>
+  </div>
 
-      <!-- Flashcard 2 -->
-      <article class="cartao">
-        <div class="cartao__inner">
-          <div class="cartao__frente">
-            <h3>Como estarei em 10 anos?</h3>
-            <p>Como estarei em 10 anos?</p>
-          </div>
-          <div class="cartao__verso">
-            <p>Estarei estável financeiramente, casada com meu namorado divo, e juntos poderemos realizar nossos sonhos.</p>
-          </div>
-        </div>
-      </article>
+  <div class="card-container">
+    <div class="card">
+      <div class="front">
+        <h2>Como estarei em 10 anos?</h2>
+      </div>
+      <div class="back">
+        <p>Estarei estável financeiramente, casada com meu namorado divo, e juntos poderemos realizar nossos sonhos.</p>
+      </div>
+    </div>
+  </div>
 
-      <!-- Flashcard 3 -->
-      <article class="cartao">
-        <div class="cartao__inner">
-          <div class="cartao__frente">
-            <h3>Meu Presente</h3>
-            <p>Como está sendo meu presente?</p>
-          </div>
-          <div class="cartao__verso">
-            <p>Estou namorando há alguns meses e me sinto extremamente feliz. Trabalho na Makita e estou cursando Auxiliar Administrativo.</p>
-          </div>
-        </div>
-      </article>
+  <div class="card-container">
+    <div class="card">
+      <div class="front">
+        <h2>Meu Presente</h2>
+      </div>
+      <div class="back">
+        <p>Estou namorando há alguns meses e me sinto extremamente feliz. Trabalho na Makita e estou cursando Auxiliar Administrativo.</p>
+      </div>
+    </div>
+  </div>
 
-      <!-- Flashcard 4 -->
-      <article class="cartao">
-        <div class="cartao__inner">
-          <div class="cartao__frente">
-            <h3>Eu e minha Escola</h3>
-            <p>Como está sendo minha experiência escolar?</p>
-          </div>
-          <div class="cartao__verso">
-            <p>Estou no segundo ano do ensino médio na turma de exatas. Minhas notas estão ok e me esforço ao máximo para melhorar.</p>
-          </div>
-        </div>
-      </article>
-    </section>
-  </main>
+  <div class="card-container">
+    <div class="card">
+      <div class="front">
+        <h2>Eu e minha Escola</h2>
+      </div>
+      <div class="back">
+        <p>Estou no segundo ano do ensino médio na turma de exatas. Minhas notas estão ok e me esforço ao máximo para melhorar.</p>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <p>Projeto desenvolvido pela Alura, sem fins lucrativos</p>
   </footer>
 </body>
-
 </html>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flashcards de Estudo</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-
-<body>
-  <header>
-    <h1>Flashcards de Estudo</h1>
-  </header>
-
-  <main>
-    <section id="container">
-      <!-- Flashcard 1 -->
-      <article class="cartao" onclick="virarCartao(this)">
-        <div class="cartao__inner">
-          <div class="cartao__frente">
-            <h3>Quem sou eu? ❓</h3>
-            <p>Quem sou eu?</p>
-            <button class="virar">↩️ Virar</button>
-          </div>
-          <div class="cartao__verso">
-            <p>Meu nome é Lara. Todas as coisas que aconteceram comigo formam quem sou eu.</p>
-            <button class="virar">↪️ Voltar</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Flashcard 2 -->
-      <article class="cartao" onclick="virarCartao(this)">
-        <div class="cartao__inner">
-          <div class="cartao__frente">
-            <h3>Como estarei em 10 anos? 🔮</h3>
-            <p>Como estarei em 10 anos?</p>
-            <button class="virar">↩️ Virar</button>
-          </div>
-          <div class="cartao__verso">
-            <p>Estarei estável financeiramente, casada com meu namorado divo, e juntos poderemos realizar nossos sonhos.</p>
-            <button class="virar">↪️ Voltar</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Flashcard 3 -->
-      <article class="cartao" onclick="virarCartao(this)">
-        <div class="cartao__inner">
-          <div class="cartao__frente">
-            <h3>Meu Presente 🎁</h3>
-            <p>Como está sendo meu presente?</p>
-            <button class="virar">↩️ Virar</button>
-          </div>
-          <div class="cartao__verso">
-            <p>Estou namorando há alguns meses e me sinto extremamente feliz. Trabalho na Makita e estou cursando Auxiliar Administrativo.</p>
-            <button class="virar">↪️ Voltar</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Flashcard 4 -->
-      <article class="cartao" onclick="virarCartao(this)">
-        <div class="cartao__inner">
-          <div class="cartao__frente">
-            <h3>Eu e minha Escola 🏫</h3>
-            <p>Como está sendo minha experiência escolar?</p>
-            <button class="virar">↩️ Virar</button>
-          </div>
-          <div class="cartao__verso">
-            <p>Estou no segundo ano do ensino médio na turma de exatas. Minhas notas estão ok e me esforço ao máximo para melhorar.</p>
-            <button class="virar">↪️ Voltar</button>
-          </div>
-        </div>
-      </article>
-    </section>
-  </main>
-
-  <footer>
-    <p>Projeto desenvolvido pela Alura, sem fins lucrativos</p>
-  </footer>
-
-  <script>
-    function virarCartao(cartao) {
-      cartao.classList.toggle("virado");
-    }
-  </script>
-</body>
-
-</html>
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flashcards de Estudo</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-
-<body>
-  <header>
-    <h1>Flashcards de Estudo</h1>
-  </header>
-
-  <main>
-    <section id="container">
-      <!-- Flashcard 1 -->
-      <article class="cartao">
-        <div class="cartao__inner">
-          <div class="cartao__frente">
-            <h3>Quem sou eu? ❓</h3>
-            <p>Quem sou eu?</p>
-            <button class="virar" onclick="virarCartao(this)">↩️ Virar</button>
-          </div>
-          <div class="cartao__verso">
-            <p>Meu nome é Lara. Todas as coisas que aconteceram comigo formam quem sou eu.</p>
-            <button class="virar" onclick="virarCartao(this)">↪️ Voltar</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Flashcard 2 -->
-      <article class="cartao">
-        <div class="cartao__inner">
-          <div class="cartao__frente">
-            <h3>Como estarei em 10 anos? 🔮</h3>
-            <p>Como estarei em 10 anos?</p>
-            <button class="virar" onclick="virarCartao(this)">↩️ Virar</button>
-          </div>
-          <div class="cartao__verso">
-            <p>Estarei estável financeiramente, casada com meu namorado divo, e juntos poderemos realizar nossos sonhos.</p>
-            <button class="virar" onclick="virarCartao(this)">↪️ Voltar</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Flashcard 3 -->
-      <article class="cartao">
-        <div class="cartao__inner">
-          <div class="cartao__frente">
-            <h3>Meu Presente 🎁</h3>
-            <p>Como está sendo meu presente?</p>
-            <button class="virar" onclick="virarCartao(this)">↩️ Virar</button>
-          </div>
-          <div class="cartao__verso">
-            <p>Estou namorando há alguns meses e me sinto extremamente feliz. Trabalho na Makita e estou cursando Auxiliar Administrativo.</p>
-            <button class="virar" onclick="virarCartao(this)">↪️ Voltar</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Flashcard 4 -->
-      <article class="cartao">
-        <div class="cartao__inner">
-          <div class="cartao__frente">
-            <h3>Eu e minha Escola 🏫</h3>
-            <p>Como está sendo minha experiência escolar?</p>
-            <button class="virar" onclick="virarCartao(this)">↩️ Virar</button>
-          </div>
-          <div class="cartao__verso">
-            <p>Estou no segundo ano do ensino médio na turma de exatas. Minhas notas estão ok e me esforço ao máximo para melhorar.</p>
-            <button class="virar" onclick="virarCartao(this)">↪️ Voltar</button>
-          </div>
-        </div>
-      </article>
-    </section>
-  </main>
-
-  <footer>
-    <p>Projeto desenvolvido pela Alura, sem fins lucrativos</p>
-  </footer>
-
-  <script>
-    function virarCartao(botao) {
-      const cartao = botao.closest(".cartao");
-      cartao.classList.toggle("virado");
-    }
-  </script>
-</body>
-
-</html>
