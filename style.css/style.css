@@ -103,3 +103,270 @@ button:hover {
 }
 
 background-color
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fff0f5; /* rosa bem clarinho */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background-color: #add8e6; /* azul claro */
+  color: #4b0082; /* roxo escuro */
+  padding: 1.5rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.cartao {
+  width: 250px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.cartao__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.cartao:hover .cartao__inner {
+  transform: rotateY(180deg);
+}
+
+.cartao__frente,
+.cartao__verso {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 15px;
+}
+
+.cartao__frente {
+  background-color: #ffe4e1; /* rosa bebê */
+  color: #4b0082;
+}
+
+.cartao__verso {
+  background-color: #b0e0e6; /* azul bebê */
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #faf0f8;
+  color: #555;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fff0f5;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background-color: #add8e6;
+  color: #4b0082;
+  padding: 1.5rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.cartao {
+  width: 250px;
+  height: 220px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.cartao__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.cartao.virado .cartao__inner {
+  transform: rotateY(180deg);
+}
+
+.cartao__frente,
+.cartao__verso {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 15px;
+}
+
+.cartao__frente {
+  background-color: #ffe4e1;
+  color: #4b0082;
+}
+
+.cartao__verso {
+  background-color: #b0e0e6;
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+button.virar {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #ffb6c1;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+button.virar:hover {
+  background-color: #ff69b4;
+  color: white;
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #faf0f8;
+  color: #555;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #fff0f5; /* rosa clarinho */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  background-color: #add8e6; /* azul claro */
+  color: #4b0082; /* roxo escuro */
+  padding: 1.5rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.cartao {
+  width: 250px;
+  height: 220px;
+  perspective: 1000px;
+}
+
+.cartao__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.cartao.virado .cartao__inner {
+  transform: rotateY(180deg);
+}
+
+.cartao__frente,
+.cartao__verso {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 15px;
+}
+
+.cartao__frente {
+  background-color: #ffe4e1; /* rosa bebê */
+  color: #4b0082;
+}
+
+.cartao__verso {
+  background-color: #b0e0e6; /* azul bebê */
+  color: #333;
+  transform: rotateY(180deg);
+}
+
+button.virar {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #ffb6c1; /* rosa mais forte */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+button.virar:hover {
+  background-color: #ff69b4;
+  color: white;
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #faf0f8;
+  color: #555;
+}
