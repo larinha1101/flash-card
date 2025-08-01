@@ -18,19 +18,27 @@ h1 {
 }
 
 .card-container {
-  perspective: 1000px;
+  perspective: 1200px; /* mais realismo no 3D */
   margin-bottom: 30px;
+  width: 320px;
+  height: 180px;
 }
 
 .card {
-  width: 320px;
-  height: 180px;
+  width: 100%;
+  height: 100%;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow:
+    0 8px 15px rgba(0,0,0,0.25),
+    inset 0 0 10px rgba(255,255,255,0.2);
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 0.8s;
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  background-clip: padding-box;
+  border: 2px solid #f9c2d9;
+  /* leve textura ou brilho */
+  background: linear-gradient(145deg, #fcd3e0, #fbb1d9);
 }
 
 .card-container:hover .card,
@@ -47,23 +55,34 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 25px;
   box-sizing: border-box;
   text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 .front {
   background-color: #fbb1d9; /* rosa claro */
   color: #4a235a;
-  font-weight: bold;
-  font-size: 1.5rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  box-shadow:
+    0 6px 12px rgba(255, 255, 255, 0.3) inset,
+    0 -4px 6px rgba(255, 255, 255, 0.2) inset;
+  border: 1px solid #f994bd;
 }
 
 .back {
   background-color: #b3e5fc; /* azul claro */
-  color: #3a3a3a;
+  color: #2e2e2e;
   transform: rotateY(180deg);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
+  box-shadow:
+    0 6px 12px rgba(255, 255, 255, 0.3) inset,
+    0 -4px 6px rgba(255, 255, 255, 0.2) inset;
+  border: 1px solid #81b4d6;
 }
 
 footer {
