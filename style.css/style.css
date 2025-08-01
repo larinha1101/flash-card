@@ -1,3 +1,4 @@
+/* Corpo da página */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,19 +12,22 @@ body {
   box-sizing: border-box;
 }
 
+/* Título */
 h1 {
   margin-bottom: 40px;
   color: #4a235a;
   text-shadow: 1px 1px 2px #fff;
 }
 
+/* Container com perspectiva 3D */
 .card-container {
-  perspective: 1200px; /* mais realismo no 3D */
+  perspective: 1200px;
   margin-bottom: 30px;
   width: 320px;
   height: 180px;
 }
 
+/* Cartão */
 .card {
   width: 100%;
   height: 100%;
@@ -37,15 +41,16 @@ h1 {
   cursor: pointer;
   background-clip: padding-box;
   border: 2px solid #f9c2d9;
-  /* leve textura ou brilho */
   background: linear-gradient(145deg, #fcd3e0, #fbb1d9);
 }
 
+/* Efeito de giro ao passar o mouse */
 .card-container:hover .card,
 .card-container:focus-within .card {
   transform: rotateY(180deg);
 }
 
+/* Frente e verso do cartão */
 .front, .back {
   position: absolute;
   width: 100%;
@@ -59,10 +64,9 @@ h1 {
   box-sizing: border-box;
   text-align: center;
   user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
 }
 
+/* Frente do cartão */
 .front {
   background-color: #fbb1d9; /* rosa claro */
   color: #4a235a;
@@ -74,6 +78,7 @@ h1 {
   border: 1px solid #f994bd;
 }
 
+/* Verso do cartão */
 .back {
   background-color: #b3e5fc; /* azul claro */
   color: #2e2e2e;
@@ -85,6 +90,7 @@ h1 {
   border: 1px solid #81b4d6;
 }
 
+/* Rodapé */
 footer {
   margin-top: auto;
   color: #4a235a;
@@ -92,4 +98,3 @@ footer {
   font-style: italic;
   padding: 15px 0 5px 0;
 }
-
