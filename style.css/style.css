@@ -69,11 +69,11 @@ h1 {
 }
 
 .card-front {
-  background-color: #e0e0e0;
+  background-color: #df3970;
 }
 
 .card-back {
-  background-color: #c0c0c0;
+  background-color: #91a8e7;
   transform: rotateY(180deg);
 }
 
@@ -83,7 +83,7 @@ button {
   padding: 8px 12px;
   border: none;
   border-radius: 5px;
-  background-color: #4CAF50;
+  background-color: #b882d8;
   color: white;
   cursor: pointer;
   font-size: 14px;
@@ -91,7 +91,7 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #ffc9ef;
 }
 
 /* Responsividade */
@@ -100,3 +100,4 @@ button:hover {
     width: 90%;
   }
 }
+ background-color
