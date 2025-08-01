@@ -1,96 +1,68 @@
-/* Corpo da página */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(90deg, #fbb1d9, #b3e5fc);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f1e9; /* bege claro */
   color: #333;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px;
   min-height: 100vh;
+  padding: 20px;
   box-sizing: border-box;
 }
 
-/* Título */
-h1 {
-  margin-bottom: 40px;
-  color: #4a235a;
-  text-shadow: 1px 1px 2px #fff;
-}
-
-/* Container com perspectiva 3D */
-.card-container {
-  perspective: 1200px;
-  margin-bottom: 30px;
-  width: 320px;
-  height: 180px;
-}
-
-/* Cartão */
-.card {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  box-shadow:
-    0 8px 15px rgba(0,0,0,0.25),
-    inset 0 0 10px rgba(255,255,255,0.2);
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  background-clip: padding-box;
-  border: 2px solid #f9c2d9;
-  background: linear-gradient(145deg, #fcd3e0, #fbb1d9);
-}
-
-/* Efeito de giro ao passar o mouse */
-.card-container:hover .card,
-.card-container:focus-within .card {
-  transform: rotateY(180deg);
-}
-
-/* Frente e verso do cartão */
-.front, .back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  backface-visibility: hidden;
+#container {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cartao {
+  background-color: aqua;
+  height: 20rem;
+  margin: 1rem 1rem;
+  flex-grow: 1;
+  flex-basis: calc(33% - 6rem);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: relative;
+  display: flex;
   align-items: center;
-  padding: 25px;
+  justify-content: center;
+  padding: 1rem;
   box-sizing: border-box;
+}
+
+.cartao__conteudo {
   text-align: center;
-  user-select: none;
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 
-/* Frente do cartão */
-.front {
-  background-color: #fbb1d9; /* rosa claro */
-  color: #4a235a;
-  font-weight: 700;
-  font-size: 1.6rem;
-  box-shadow:
-    0 6px 12px rgba(255, 255, 255, 0.3) inset,
-    0 -4px 6px rgba(255, 255, 255, 0.2) inset;
-  border: 1px solid #f994bd;
+.cartao__conteudo h3 {
+  background-color: tomato;
+  text-align: left;
+  padding: 0.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0.6rem;
+  border-radius: 0.6rem;
+  font-size: 1vw;
+  color: white;
+  box-sizing: border-box;
+  width: calc(100% - 1.2rem);
 }
 
-/* Verso do cartão */
-.back {
-  background-color: #b3e5fc; /* azul claro */
-  color: #2e2e2e;
-  transform: rotateY(180deg);
-  font-size: 1.2rem;
-  box-shadow:
-    0 6px 12px rgba(255, 255, 255, 0.3) inset,
-    0 -4px 6px rgba(255, 255, 255, 0.2) inset;
-  border: 1px solid #81b4d6;
+.cartao__conteudo__pergunta p,
+.cartao__conteudo__resposta p {
+  margin: 2.5rem 1rem 0 1rem;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #222;
 }
 
-/* Rodapé */
 footer {
   margin-top: auto;
   color: #4a235a;
