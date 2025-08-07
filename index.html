@@ -7,10 +7,10 @@
   <meta name="description" content="Aplicação de flashcards: HTML, CSS e JavaScript. Projeto educacional — Alura." />
   <style>
     :root{
-      --bg:#f8f6ff;
-      --card-front:#ffeef8; /* rosa claro */
-      --card-back:#e8f7ff; /* azul clarinho */
-      --accent:#6b21a8;
+      --bg:#f0f8ff;
+      --card-front:#b3d9ff; /* azul bebê */
+      --card-back:#cce6ff; /* azul bebê mais claro */
+      --accent:#005f99;
       --muted:#6b7280;
       font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
@@ -28,15 +28,15 @@
 
     .controls{display:flex; gap:10px; margin-top:18px; align-items:center}
     .btn{background:var(--accent); color:#fff; border:none; padding:10px 14px; border-radius:10px; cursor:pointer; font-weight:600}
-    .btn.ghost{background:transparent; color:var(--accent); border:1px solid rgba(107,33,168,0.12)}
+    .btn.ghost{background:transparent; color:var(--accent); border:1px solid rgba(0,95,153,0.12)}
 
     .grid{display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:20px}
 
     /* Card */
     .card{perspective:1200px}
-    .card-inner{position:relative; height:220px; border-radius:12px; transform-style:preserve-3d; transition:transform .6s cubic-bezier(.2,.9,.3,1); cursor:pointer; box-shadow:0 8px 20px rgba(15,23,42,0.06); border:1px solid rgba(15,23,42,0.04)}
+    .card-inner{position:relative; height:220px; border-radius:12px; transform-style:preserve-3d; transition:transform .6s cubic-bezier(.2,.9,.3,1); cursor:pointer; box-shadow:0 8px 20px rgba(15,23,42,0.06); border:1px solid rgba(15,23,42,0.04); transform:rotateY(0deg)}
     .card.flipped .card-inner{transform:rotateY(180deg)}
-    .face{position:absolute; inset:0; backface-visibility:hidden; padding:18px; display:flex; flex-direction:column; gap:8px; justify-content:center}
+    .face{position:absolute; inset:0; backface-visibility:hidden; padding:18px; display:flex; flex-direction:column; gap:8px; justify-content:center; border-radius:12px}
     .front{background:var(--card-front)}
     .back{background:var(--card-back); transform:rotateY(180deg)}
 
@@ -87,80 +87,54 @@
   </main>
 
   <script>
-    // Conteúdo inicial com as informações que você mandou.
     const DEFAULT_CARDS = [
-      {
-        category: 'Identidade',
-        question: 'Quem sou eu?',
-        answer: 'Meu nome é Lara. Todas as coisas que aconteceram comigo formam quem sou eu.'
-      },
-      {
-        category: 'Futuro',
-        question: 'Como estarei em 10 anos?',
-        answer: 'Estarei estável financeiramente, casada com meu namorado divo, e juntos poderemos realizar nossos sonhos.'
-      },
-      {
-        category: 'Presente',
-        question: 'Como está sendo meu presente?',
-        answer: 'Estou namorando há alguns meses e me sinto extremamente feliz. Trabalho na Makita e estou cursando Auxiliar Administrativo.'
-      },
-      {
-        category: 'Escola',
-        question: 'Como está sendo minha experiência escolar?',
-        answer: 'Estou no segundo ano do ensino médio na turma de exatas. Minhas notas estão ok e me esforço ao máximo para melhorar.'
-      }
+      { category: 'Identidade', question: 'Quem sou eu?', answer: 'Meu nome é Lara. Todas as coisas que aconteceram comigo formam quem sou eu.' },
+      { category: 'Futuro', question: 'Como estarei em 10 anos?', answer: 'Estarei estável financeiramente, casada com meu namorado divo, e juntos poderemos realizar nossos sonhos.' },
+      { category: 'Presente', question: 'Como está sendo meu presente?', answer: 'Estou namorando há alguns meses e me sinto extremamente feliz. Trabalho na Makita e estou cursando Auxiliar Administrativo.' },
+      { category: 'Escola', question: 'Como está sendo minha experiência escolar?', answer: 'Estou no segundo ano do ensino médio na turma de exatas. Minhas notas estão ok e me esforço ao máximo para melhorar.' }
     ];
 
-    // Utilitários para codificar/decodificar no URL
     function encodeCards(cards){ return btoa(encodeURIComponent(JSON.stringify(cards))); }
     function decodeCards(s){ try{ return JSON.parse(decodeURIComponent(atob(s))); }catch(e){return null} }
 
     const container = document.getElementById('cards');
     let cards = [];
 
-    // Renderiza os cartões dinamicamente
     function render(){
       container.innerHTML = '';
-      cards.forEach((c, idx)=>{
+      cards.forEach((c)=>{
         const wrapper = document.createElement('div'); wrapper.className='card';
-        const inner = document.createElement('div'); inner.className='card-inner'; inner.tabIndex=0; inner.setAttribute('role','button'); inner.setAttribute('aria-pressed','false');
+        const inner = document.createElement('div'); inner.className='card-inner'; inner.tabIndex=0; inner.setAttribute('role','button');
 
-        inner.addEventListener('click', ()=> toggleFlip(wrapper, inner));
-        inner.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggleFlip(wrapper, inner); } });
+        inner.addEventListener('click', ()=> wrapper.classList.toggle('flipped'));
+        inner.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); wrapper.classList.toggle('flipped'); } });
 
         const front = document.createElement('div'); front.className='face front';
-        front.innerHTML = `<div class="category">${escapeHtml(c.category)}</div><div class="question">${escapeHtml(c.question)}</div>`;
+        front.innerHTML = `<div class="category">${c.category}</div><div class="question">${c.question}</div>`;
 
         const back = document.createElement('div'); back.className='face back';
-        back.innerHTML = `<div class="category">${escapeHtml(c.category)}</div><div class="answer">${escapeHtml(c.answer)}</div>`;
+        back.innerHTML = `<div class="category">${c.category}</div><div class="answer">${c.answer}</div>`;
 
         inner.appendChild(front); inner.appendChild(back); wrapper.appendChild(inner);
         container.appendChild(wrapper);
       });
     }
 
-    function toggleFlip(wrapper, inner){ wrapper.classList.toggle('flipped'); const pressed = inner.getAttribute('aria-pressed') === 'true'; inner.setAttribute('aria-pressed', String(!pressed)); }
-
-    // Escapa texto simples para inserir em HTML
-    function escapeHtml(s){ if(!s && s!==0) return ''; return String(s).replace(/[&<>"']/g, function(ch){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[ch]; }); }
-
-    // Gerenciamento local (localStorage)
     const STORAGE_KEY = 'flashcards_lara_v1';
     function saveLocal(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(cards)); }
     function loadLocal(){ try{ const v=localStorage.getItem(STORAGE_KEY); if(v){ const parsed = JSON.parse(v); if(Array.isArray(parsed)) return parsed } }catch(e){} return null }
 
-    // Ações dos botões
     document.getElementById('addBtn').addEventListener('click', ()=>{
       const cat = document.getElementById('category').value.trim() || 'Sem categoria';
       const q = document.getElementById('question').value.trim();
       const a = document.getElementById('answer').value.trim();
       if(!q || !a){ alert('Por favor, preencha pergunta e resposta.'); return; }
       cards.unshift({category:cat, question:q, answer:a});
-      saveLocal(); render(); document.getElementById('category').value=''; document.getElementById('question').value=''; document.getElementById('answer').value='';
+      saveLocal(); render();
     });
 
     document.getElementById('reset').addEventListener('click', ()=>{
-      if(confirm('Restaurar os cartões padrão? Isso apagará seus cartões salvos localmente.')){
+      if(confirm('Restaurar os cartões padrão?')){
         cards = DEFAULT_CARDS.slice(); saveLocal(); render(); history.replaceState(null,'',location.pathname);
       }
     });
@@ -168,13 +142,11 @@
     document.getElementById('copyShare').addEventListener('click', async ()=>{
       const token = encodeCards(cards);
       const url = location.origin + location.pathname + '?cards=' + token;
-      try{ await navigator.clipboard.writeText(url); alert('Link copiado! Cole e envie para alguém para compartilhar seus cartões.'); }
+      try{ await navigator.clipboard.writeText(url); alert('Link copiado!'); }
       catch(e){ prompt('Copie o link abaixo:', url); }
     });
 
-    // Inicialização
     (function init(){
-      // Se existir ?cards=... na URL, usa isso como fonte
       const params = new URLSearchParams(location.search);
       const fromUrl = params.get('cards');
       if(fromUrl){ const decoded = decodeCards(fromUrl); if(Array.isArray(decoded)) { cards = decoded; render(); return; } }
@@ -184,7 +156,6 @@
       render();
     })();
 
-    // Salva automaticamente antes de fechar
     window.addEventListener('beforeunload', saveLocal);
   </script>
 </body>
