@@ -55,10 +55,64 @@
 
             <!-- Outros flashcards, se necessário -->
         </section>
-    </main>
+    </main><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Cards de Estudo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Flash Cards de Estudo</h1>
+    </header>
     
-    <footer>
-        <p>Desenvolvido por Lara</p>
+    <main>
+        <section class="flashcards">
+            <!-- Flashcard sobre "Quem sou eu" -->
+            <article class="card">
+                <div class="card-front">
+                    <p>Quem sou eu?</p>
+                </div>
+                <div class="card-back">
+                    <p>Meu nome é Lara. Todas as coisas que aconteceram comigo formam quem sou eu.</p>
+                </div>
+            </article>
+
+            <!-- Flashcard sobre "Como estarei em 10 anos" -->
+            <article class="card">
+                <div class="card-front">
+                    <p>Como estarei em 10 anos?</p>
+                </div>
+                <div class="card-back">
+                    <p>Estarei estável financeiramente, casada com meu namorado divo, e juntos poderemos realizar nossos sonhos.</p>
+                </div>
+            </article>
+
+            <!-- Flashcard sobre "Meu Presente" -->
+            <article class="card">
+                <div class="card-front">
+                    <p>Como está sendo o meu presente?</p>
+                </div>
+                <div class="card-back">
+                    <p>Estou namorando há alguns meses e me sinto extremamente feliz. Trabalho na Makita e estou cursando Auxiliar Administrativo.</p>
+                </div>
+            </article>
+
+            <!-- Flashcard sobre "Eu e Minha Escola" -->
+            <article class="card">
+                <div class="card-front">
+                    <p>Como está sendo a minha experiência na escola?</p>
+                </div>
+                <div class="card-back">
+                    <p>Estou no segundo ano do ensino médio na turma de exatas. Minhas notas estão ok e me esforço ao máximo para melhorar.</p>
+                </div>
+            </article>
+
+            <!-- Outros flashcards, se necessário -->
+        </section>
+    </main>
     </footer>
 
     <script src="script.js"></script>
