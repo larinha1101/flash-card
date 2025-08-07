@@ -1,162 +1,96 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Flashcards — Projeto Lara</title>
-  <meta name="description" content="Aplicação de flashcards: HTML, CSS e JavaScript. Projeto educacional — Alura." />
-  <style>
-    :root{
-      --bg:#f0f8ff;
-      --card-front:#b3d9ff; /* azul bebê */
-      --card-back:#cce6ff; /* azul bebê mais claro */
-      --accent:#005f99;
-      --muted:#6b7280;
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0; min-height:100vh; background:linear-gradient(180deg,var(--bg),#ffffff); color:#111827; display:flex; align-items:flex-start; justify-content:center; padding:32px;
-    }
-    .app{
-      width:100%; max-width:980px; background: #fff; border-radius:12px; box-shadow: 0 10px 30px rgba(99,102,241,0.07); padding:28px;
-    }
-    header{display:flex; gap:18px; align-items:center}
-    .avatar{width:84px; height:84px; border-radius:10px; background:linear-gradient(135deg,var(--card-front),var(--card-back)); display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--accent)}
-    h1{font-size:20px;margin:0}
-    p.lead{margin:6px 0 0;color:var(--muted)}
-
-    .controls{display:flex; gap:10px; margin-top:18px; align-items:center}
-    .btn{background:var(--accent); color:#fff; border:none; padding:10px 14px; border-radius:10px; cursor:pointer; font-weight:600}
-    .btn.ghost{background:transparent; color:var(--accent); border:1px solid rgba(0,95,153,0.12)}
-
-    .grid{display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:20px}
-
-    /* Card */
-    .card{perspective:1200px}
-    .card-inner{position:relative; height:220px; border-radius:12px; transform-style:preserve-3d; transition:transform .6s cubic-bezier(.2,.9,.3,1); cursor:pointer; box-shadow:0 8px 20px rgba(15,23,42,0.06); border:1px solid rgba(15,23,42,0.04); transform:rotateY(0deg)}
-    .card.flipped .card-inner{transform:rotateY(180deg)}
-    .face{position:absolute; inset:0; backface-visibility:hidden; padding:18px; display:flex; flex-direction:column; gap:8px; justify-content:center; border-radius:12px}
-    .front{background:var(--card-front)}
-    .back{background:var(--card-back); transform:rotateY(180deg)}
-
-    .category{font-size:12px; font-weight:700; color:var(--accent); text-transform:uppercase}
-    .question{font-size:16px; font-weight:700}
-    .answer{font-size:15px}
-
-    /* form */
-    form.add-card{display:flex; gap:8px; margin-top:18px; align-items:center}
-    form input, form textarea{padding:10px;border-radius:8px;border:1px solid #e6e9ef; outline:none; font-size:14px}
-    form .col{flex:1}
-
-    footer{margin-top:18px; color:var(--muted); font-size:13px}
-
-    @media (max-width:520px){ .card-inner{height:180px} }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards da Lara</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #b3d9ff;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .flashcard {
+            width: 200px;
+            height: 150px;
+            perspective: 1000px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flashcard.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 16px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .card-front {
+            background-color: white;
+            color: #333;
+        }
+        .card-back {
+            background-color: #80bfff;
+            color: white;
+            transform: rotateY(180deg);
+        }
+    </style>
 </head>
 <body>
-  <main class="app" role="main">
-    <header>
-      <div class="avatar" aria-hidden>LI</div>
-      <div>
-        <h1>Flashcards — Projeto Lara</h1>
-        <p class="lead">Aprenda com cartões interativos. Clique ou pressione Enter para virar o cartão.</p>
-        <p style="margin:8px 0 0;font-size:13px;color:var(--muted)">Transcrição: Guilherme Lima — introdução ao projeto (descrição acima no arquivo).</p>
-      </div>
-    </header>
+    <div class="flashcard">
+        <div class="card-inner">
+            <div class="card-front">Quem sou eu?</div>
+            <div class="card-back">Meu nome é Lara. Todas as coisas que aconteceram comigo formam quem sou eu.</div>
+        </div>
+    </div>
+    <div class="flashcard">
+        <div class="card-inner">
+            <div class="card-front">Como estarei em 10 anos?</div>
+            <div class="card-back">Estarei estável financeiramente, casada com meu namorado divo, e juntos poderemos realizar nossos sonhos.</div>
+        </div>
+    </div>
+    <div class="flashcard">
+        <div class="card-inner">
+            <div class="card-front">Como está sendo meu presente?</div>
+            <div class="card-back">Estou namorando há alguns meses e me sinto extremamente feliz. Trabalho na Makita e estou cursando Auxiliar Administrativo.</div>
+        </div>
+    </div>
+    <div class="flashcard">
+        <div class="card-inner">
+            <div class="card-front">Como está sendo minha experiência escolar?</div>
+            <div class="card-back">Estou no segundo ano do ensino médio na turma de exatas. Minhas notas estão ok e me esforço ao máximo para melhorar.</div>
+        </div>
+    </div>
 
-    <section class="controls" aria-label="Controles">
-      <button class="btn" id="copyShare">Copiar link de compartilhamento</button>
-      <button class="btn ghost" id="reset">Restaurar padrão</button>
-      <div style="margin-left:auto; color:var(--muted); font-size:13px">Projeto desenvolvido pela Alura — sem fins lucrativos</div>
-    </section>
-
-    <section id="cards" class="grid" aria-live="polite"></section>
-
-    <form class="add-card" aria-label="Adicionar cartão">
-      <input id="category" placeholder="Categoria (ex: Autoconhecimento)" class="col" />
-      <input id="question" placeholder="Pergunta (ex: Quem sou eu?)" class="col" />
-      <input id="answer" placeholder="Resposta (ex: Meu nome é Lara...)" class="col" />
-      <button class="btn" id="addBtn" type="button">Adicionar</button>
-    </form>
-
-    <footer>
-      <p><strong>Cartões padrão incluídos:</strong> "Quem sou eu?", "Futuro", "Meu Presente", "Minha Escola" — com conteúdo pessoal da Lara.</p>
-      <p>Dicas: use teclado (Tab para navegar, Enter/Espaço para virar). O botão de compartilhar copia um link com seus cartões codificados. Se quiser, cole esse link para que outra pessoa abra os mesmos cartões.</p>
-    </footer>
-  </main>
-
-  <script>
-    const DEFAULT_CARDS = [
-      { category: 'Identidade', question: 'Quem sou eu?', answer: 'Meu nome é Lara. Todas as coisas que aconteceram comigo formam quem sou eu.' },
-      { category: 'Futuro', question: 'Como estarei em 10 anos?', answer: 'Estarei estável financeiramente, casada com meu namorado divo, e juntos poderemos realizar nossos sonhos.' },
-      { category: 'Presente', question: 'Como está sendo meu presente?', answer: 'Estou namorando há alguns meses e me sinto extremamente feliz. Trabalho na Makita e estou cursando Auxiliar Administrativo.' },
-      { category: 'Escola', question: 'Como está sendo minha experiência escolar?', answer: 'Estou no segundo ano do ensino médio na turma de exatas. Minhas notas estão ok e me esforço ao máximo para melhorar.' }
-    ];
-
-    function encodeCards(cards){ return btoa(encodeURIComponent(JSON.stringify(cards))); }
-    function decodeCards(s){ try{ return JSON.parse(decodeURIComponent(atob(s))); }catch(e){return null} }
-
-    const container = document.getElementById('cards');
-    let cards = [];
-
-    function render(){
-      container.innerHTML = '';
-      cards.forEach((c)=>{
-        const wrapper = document.createElement('div'); wrapper.className='card';
-        const inner = document.createElement('div'); inner.className='card-inner'; inner.tabIndex=0; inner.setAttribute('role','button');
-
-        inner.addEventListener('click', ()=> wrapper.classList.toggle('flipped'));
-        inner.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); wrapper.classList.toggle('flipped'); } });
-
-        const front = document.createElement('div'); front.className='face front';
-        front.innerHTML = `<div class="category">${c.category}</div><div class="question">${c.question}</div>`;
-
-        const back = document.createElement('div'); back.className='face back';
-        back.innerHTML = `<div class="category">${c.category}</div><div class="answer">${c.answer}</div>`;
-
-        inner.appendChild(front); inner.appendChild(back); wrapper.appendChild(inner);
-        container.appendChild(wrapper);
-      });
-    }
-
-    const STORAGE_KEY = 'flashcards_lara_v1';
-    function saveLocal(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(cards)); }
-    function loadLocal(){ try{ const v=localStorage.getItem(STORAGE_KEY); if(v){ const parsed = JSON.parse(v); if(Array.isArray(parsed)) return parsed } }catch(e){} return null }
-
-    document.getElementById('addBtn').addEventListener('click', ()=>{
-      const cat = document.getElementById('category').value.trim() || 'Sem categoria';
-      const q = document.getElementById('question').value.trim();
-      const a = document.getElementById('answer').value.trim();
-      if(!q || !a){ alert('Por favor, preencha pergunta e resposta.'); return; }
-      cards.unshift({category:cat, question:q, answer:a});
-      saveLocal(); render();
-    });
-
-    document.getElementById('reset').addEventListener('click', ()=>{
-      if(confirm('Restaurar os cartões padrão?')){
-        cards = DEFAULT_CARDS.slice(); saveLocal(); render(); history.replaceState(null,'',location.pathname);
-      }
-    });
-
-    document.getElementById('copyShare').addEventListener('click', async ()=>{
-      const token = encodeCards(cards);
-      const url = location.origin + location.pathname + '?cards=' + token;
-      try{ await navigator.clipboard.writeText(url); alert('Link copiado!'); }
-      catch(e){ prompt('Copie o link abaixo:', url); }
-    });
-
-    (function init(){
-      const params = new URLSearchParams(location.search);
-      const fromUrl = params.get('cards');
-      if(fromUrl){ const decoded = decodeCards(fromUrl); if(Array.isArray(decoded)) { cards = decoded; render(); return; } }
-
-      const local = loadLocal();
-      if(local) cards = local; else cards = DEFAULT_CARDS.slice();
-      render();
-    })();
-
-    window.addEventListener('beforeunload', saveLocal);
-  </script>
+    <script>
+        document.querySelectorAll('.flashcard').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+            card.addEventListener('keypress', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    card.classList.toggle('flipped');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
