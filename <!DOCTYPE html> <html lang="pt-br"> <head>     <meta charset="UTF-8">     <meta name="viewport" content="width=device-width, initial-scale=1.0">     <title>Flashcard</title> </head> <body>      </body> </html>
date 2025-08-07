@@ -118,3 +118,23 @@
     <script src="script.js"></script>
 </body>
 </html>
+#include <Servo.h>
+
+Servo meuServo;  // Cria o objeto servo
+
+void setup() {
+  Serial.begin(9600); // Inicializa a comunicação serial
+  meuServo.attach(9); // Conecta o servo ao pino 9
+  Serial.println("Projeto iniciado. Preparado para virar e passar de frente para trás.");
+}
+
+void loop() {
+  // Gira para uma posição "frente"
+  meuServo.write(0);
+  Serial.println("Virando para frente...");
+  delay(2000); // Aguarda 2 segundos
+
+  // Gira para uma posição "verso" (trás)
+  meuServo.write(180);
+  Serial.println("Virando para trás...");
+  delay(2000); // Aguarda 2 segundos
